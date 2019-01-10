@@ -10,8 +10,8 @@ import java.util.Date;
 public class ABadListener {
 
     @StreamListener(Sink.INPUT)
-    public void listen(String input) {
-        System.out.println(new Date().toInstant().toString() + " " + input);
+    public void listen(SomeDto input) {
+        System.out.println(new Date().toInstant().toString() + " " + input.something);
 
         throw new RuntimeException("Don't care!");
     }

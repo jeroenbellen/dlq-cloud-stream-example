@@ -16,7 +16,6 @@ public class AGoodTalker {
 
     @GetMapping("/{something}")
     public void tak(@PathVariable("something") String something) {
-
-        amqpTemplate.convertAndSend("piet", "piraat", something);
+        amqpTemplate.convertAndSend("piet", "piraat", new SomeDto(something));
     }
 }
